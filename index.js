@@ -21,6 +21,11 @@ mongoose.connect(process.env.MONGO_URI, {})
     .then(() => console.log('Conectado a MongoDB Atlas'))
     .catch(err => console.error('Error de conexión a MongoDB:', err));
 
+// Ruta de prueba
+app.get('/test', (req, res) => {
+    res.send('Servidor funcionando correctamente');
+});
+
 // Rutas
 app.use('/v1/users', userRoutes);
 app.use('/v1/archivos', archivosRoutes); // Rutas de archivos
